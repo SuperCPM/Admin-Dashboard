@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply [scrollbar-color:_#cbd5e1_transparent] dark:[scrollbar-color:_#334155_transparent];
+    }
+}
+
+@layer components {
+    .sidebar-group {
+        @apply flex w-full flex-col gap-y-2;
+    }
+
+    .sidebar-group-title {
+        @apply overflow-hidden text-ellipsis text-sm font-medium text-slate-700 dark:text-slate-300;
+    }
+
+    .sidebar-item {
+        @apply flex h-[40px] w-full flex-shrink-0 items-center gap-x-3 rounded-lg p-3 text-base font-medium text-slate-900 transition-colors hover:bg-blue-50 dark:text-slate-50 dark:hover:bg-blue-950;
+        &.active {
+            @apply bg-blue-500 text-slate-50 dark:bg-blue-600;
+            &:hover {
+                @apply bg-blue-500 dark:bg-blue-600;
+            }
+        }
+    }
+
+    .title {
+        @apply text-2xl font-semibold text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .btn-ghost {
+        @apply flex h-10 flex-shrink-0 items-center justify-center gap-x-2 rounded-lg p-2 text-slate-500 transition-colors hover:bg-blue-50 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-blue-950 dark:hover:text-slate-200;
+    }
+
+    .link {
+        @apply text-base font-medium text-slate-900 transition-colors hover:underline dark:text-slate-50;
+    }
+
+    .input {
+        @apply rounded-lg border border-slate-300 bg-transparent px-5 py-2 text-slate-900 dark:text-slate-50 dark:border-slate-700 w-full;
+    }
+
+    .card {
+        @apply rounded-lg border border-slate-300 transition-colors dark:border-slate-700;
+    }
+
+    .card-header {
+        @apply flex items-center justify-between gap-x-4 border-b border-slate-300 p-5 transition-colors dark:border-slate-700;
+    }
+
+    .card-title {
+        @apply text-lg font-medium text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .card-body {
+        @apply p-5;
+    }
+
+    .table {
+        @apply w-full border-collapse;
+    }
+
+    .table-header {
+        @apply sticky top-0 bg-slate-100 transition-colors dark:bg-slate-950;
+    }
+
+    .table-row {
+        @apply border-b border-slate-300 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-900;
+    }
+
+    .table-head {
+        @apply p-5 text-left font-medium text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .table-cell {
+        @apply p-5 text-slate-800 transition-colors dark:text-slate-200 break-words max-w-[300px] truncate;
+    }
+
+    .button {
+        @apply flex items-center gap-x-2 rounded-lg px-5 py-2 text-white transition-colors;
+    }
+
+    .button-primary {
+        @apply bg-blue-500 hover:bg-blue-600;
+    }
+
+    .button-danger {
+        @apply bg-red-500 hover:bg-red-600;
+    }
+}
+
+.recharts-default-tooltip {
+    @apply !rounded-lg !border !border-slate-300 !bg-white transition-colors dark:!border-slate-700 dark:!bg-slate-900;
+}
+
+.recharts-tooltip-label {
+    @apply text-base font-medium text-slate-900 dark:text-slate-50;
+}
+
+.recharts-tooltip-item {
+    @apply text-base font-medium !text-blue-500 dark:!text-blue-600;
+}
